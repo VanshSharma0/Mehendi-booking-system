@@ -1,0 +1,128 @@
+
+/* Optional: Specify text color for specific elements if needed */
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: mediumvioletred;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: 90%;
+}
+
+.aboutimg{
+    width: 100%;
+    height: 250px!important;
+}
+/* Add this CSS code to your existing style.css or include it in the head of your HTML file */
+
+body {
+    background: linear-gradient(135deg, #050505, #484848);
+    color: #fff;
+}
+
+
+.container {
+    background-color: #ffffff; /* White background for the container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin-top: 20px;
+}
+
+h2 {
+    color: aliceblue; /* Dark color for headings */
+}
+
+.display-4 {
+    color: #007bff; /* Primary color for large display headings */
+}
+
+p {
+    color: aliceblue; /* Dark gray color for regular text */
+}
+
+.aboutimg {
+    border-radius: 10px; /* Rounded corners for the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the image */
+}
+
+.btn-success {
+    background-color: #28a745; /* Success green for buttons */
+    border-color: #28a745; /* Match the button border color */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Optional: Add hover effect on the container for more interactivity */
+.container:hover {
+    transform: scale(1.02); /* Slightly scale up the container on hover */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+.navbar {
+    background: transparent;
+}
+
+.navbar-brand h3,
+.navbar-nav a {
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #fff;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #fff;
+}
+.card {
+    background: #333;
+    color: #fff;
+    border: none;
+}
+
+.card-title {
+    color: #fff;
+}
+
+.card a {
+    color: #fff;
+}
+.my-4 h2, .my-5 h2, .my-4 h3 {
+    color: #fff;
+}
+
+.form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+

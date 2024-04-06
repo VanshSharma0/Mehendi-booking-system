@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Henna Oasis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #1a1a1d;
+            border-bottom: 2px solid #5a6268;
+            border-radius: 0;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item-title {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .portfolio-item-description {
+            color: #555;
+        }
+
+        footer {
+            background-color: #1a1a1d;
+            padding: -20px 0;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.php">
+            <img src="images/hey1.png" alt="Logo" height="30">
+            The Henna Oasis
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.php">Home</a>
+                <a class="nav-item nav-link" href="contact.php">Contact</a>
+                <a class="nav-item nav-link" href="about.php">About</a>
+                <a class="nav-item nav-link" href="pricing.php">Pricing</a>
+                <a class="nav-item nav-link" href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 100px;">
+                    <h2 class="text-center mb-4">Our Artists</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/a1.jpg" alt="Artist 1" style="height: 432px;">
+                        <h4 class="portfolio-item-title"> Kamal preet kaur</h4>
+                        <p class="portfolio-item-description"></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/a2.jpeg" alt="Artist 2 2" style="height: 432px;">
+                        <h4 class="portfolio-item-title">  Krishika aggarwal</h4>
+                        <p class="portfolio-item-description"></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/a3.jpg" alt="artist 3" style="height: 432px;">
+                        <h4 class="portfolio-item-title">  Gungun gupta</h4>
+                        <p class="portfolio-item-description"></p>
+                    </div>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center mb-4"> Our Artist Portfolio</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/cp12.jpg" alt="Portfolio Item 1" style="height: 432px;">
+                        <h4 class="portfolio-item-title">Artwork Title 1</h4>
+                        <p class="portfolio-item-description"></p>
+                        <a href="appintmentbook.html" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/cp13.jpg" alt="Portfolio Item 2" style="height: 432px;">
+                        <h4 class="portfolio-item-title">Artwork Title 2</h4>
+                        <p class="portfolio-item-description"></p>
+                        <a href="appintmentbook.html" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="images/cp11.jpg" alt="Portfolio Item 3"style="height: 432px;">
+                        <h4 class="portfolio-item-title">Artwork Title 3</h4>
+                        <p class="portfolio-item-description">.</p>
+                        <a href="appintmentbook.html" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </div>
+
+    <footer>
+        <p class="p-3 bg-dark text-white">© 2024 The Henna Oasis. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

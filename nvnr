@@ -1,0 +1,209 @@
+<?php
+// Start session to manage user authentication
+session_start();
+
+// Database configuration
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "mehendi";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// User Authentication
+if(!isset($_SESSION['admin'])) {
+    header("Location: login.php"); // Redirect to login page if not logged in
+    exit();
+}
+
+// Function to add a new user
+if(isset($_POST['add_user'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+
+    $sql = "INSERT INTO users (username, email) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $email);
+    
+    if ($stmt->execute()) {
+        echo "User added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Function to delete a user
+if(isset($_GET['delete_user'])) {
+    $id = $_GET['delete_user'];
+
+    $sql = "DELETE FROM users WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    
+    if ($stmt->execute()) {
+        echo "User deleted successfully";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
+}
+
+// Function to edit a user
+if(isset($_POST['edit_user'])) {
+    $id = $_POST['user_id'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+
+    $sql = "UPDATE users SET username=?, email=? WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssi", $username, $email, $id);
+    
+    if ($stmt->execute()) {
+        echo "User updated successfully";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+
+// Function to add a new pricing option
+if(isset($_POST['add_pricing'])) {
+    $design_name = $_POST['design_name'];
+    $price = $_POST['price'];
+    $image_url = $_POST['image_url'];
+
+    $sql = "INSERT INTO pricing (design_name, price, image_url) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $design_name, $price, $image_url);
+    
+    if ($stmt->execute()) {
+        echo "Pricing option added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Function to edit a pricing option
+if(isset($_POST['edit_pricing'])) {
+    $id = $_POST['pricing_id'];
+    $design_name = $_POST['design_name'];
+    $price = $_POST['price'];
+    $image_url = $_POST['image_url'];
+
+    $sql = "UPDATE pricing SET design_name=?, price=?, image_url=? WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssi", $design_name, $price, $image_url, $id);
+    
+    if ($stmt->execute()) {
+        echo "Pricing option updated successfully";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+
+// Fetch all users
+$user_sql = "SELECT * FROM users";
+$user_result = $conn->query($user_sql);
+
+// Fetch all pricing options
+$pricing_sql = "SELECT * FROM pricing";
+$pricing_result = $conn->query($pricing_sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - The Henna Oasis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Admin Panel</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#manageUsers">Manage Users</a>
+                    <div id="manageUsers" class="collapse">
+                        <a href="#" class="list-group-item list-group-item-action">View Users</a>
+                        <a href="#" class="list-group-item list-group-item-action">Add User</a>
+                    </div>
+                    <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#managePricing">Manage Pricing</a>
+                    <div id="managePricing" class="collapse">
+                        <a href="#" class="list-group-item list-group-item-action">View Pricing Options</a>
+                        <a href="#" class="list-group-item list-group-item-action">Add Pricing Option</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <h2>Manage Users</h2>
+                <div>
+                    <h4>Add New User</h4>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="add_user">Add User</button>
+                    </form>
+                </div>
+                <div class="mt-4">
+                    <h4>Users List</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($user_result->num_rows > 0) {
+                                while($row = $user_result->fetch_assoc()) {
+                                    echo "<tr>
+                                            <td>".$row["id"]."</td>
+                                            <td>".$row["username"]."</td>
+                                            <td>".$row["email"]."</td>
+                                            <td><a href='?delete_user=".$row["id"]."' class='btn btn-danger'>Delete</a></td>
+                                          </tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4'>No users found</td></tr>";
+                            }
+                            ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<?php
+// Close database connection
+$conn->close();
+?>

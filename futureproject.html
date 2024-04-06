@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Future Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #1a1a1d;
+        color: #fff;
+        text-align: center;
+        padding: 70px 0;
+        margin-bottom: 62px;
+    }
+
+    .projects {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .project {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .project img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .project h2 {
+        margin-top: 10px;
+    }
+
+    .project p {
+        color: #666;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #342ac2;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+
+    .btn:hover {
+        background-color: #24188d;
+    }
+
+    .navbar {
+        background-color: #1a1a1d;
+        border-bottom: 2px solid #5a6268;
+        border-radius: 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: #fff;
+    }   
+
+    footer {
+        background-color: #1a1a1d;
+        padding: 20px 0;
+        color: #fff;
+        text-align: center;
+    }
+    .animated-btn {
+            animation: pulse 1s infinite alternate;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/hey1.png" alt="Logo" height="30">
+            The Henna Oasis
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.php">Home</a>
+                <a class="nav-item nav-link" href="contact.php">Contact</a>
+                <a class="nav-item nav-link" href="about.php">About</a>
+                <a class="nav-item nav-link" href="pricing.php">Pricing</a>
+                <a class="nav-item nav-link" href="login.html">Login</a>
+                <a class="nav-item nav-link" href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Our Future Projects</h1>
+    </header>
+
+    <section class="projects">
+        <div class="project">
+            <img src="Images/p2.jpg" alt="Henna Workshop">
+            <h2>Henna Workshop</h2>
+            <p>Join our henna workshops to learn the art of henna application. Perfect for beginners and enthusiasts
+                alike.</p>
+        </div>
+        <div class="project">
+            <img src="images/p3.jpg" alt="Henna Stencil">
+            <h2>Henna Stencil</h2>
+            <p>Explore our collection of henna stencils for creating intricate and beautiful designs effortlessly.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; 2024 The Henna Oasis. All rights reserved.</p>
+                    <a href="subscribe.html" class="animated-btn btn btn-primary">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Bootstrap JS, jQuery, and Popper.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

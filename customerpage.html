@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Photos - The Henna Oasis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin-top: 70px; 
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #1a1a1d;
+            border-bottom: 2px solid #5a6268;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #1a1a1d;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Customer Photo Styles */
+        .customer-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto; /* Centering images */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .customer-photo:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        /* Customer Review Card Styles */
+        .card {
+            border: none; /* Remove card border */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Move up on hover */
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 16px;
+        }
+
+        .rating {
+            color: #ffc107; /* yellow */
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.php">
+            <img src="images/hey1.png" alt="Logo" height="30">
+            The Henna Oasis
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.php">Home</a>
+                <a class="nav-item nav-link" href="contact.php">Contact</a>
+                <a class="nav-item nav-link" href="about.php">About</a>
+                <a class="nav-item nav-link" href="pricing.php">Pricing</a>
+                <a class="nav-item nav-link" href="login.html">Login</a>
+                <a class="nav-item nav-link" href="logout.php">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="py-4">
+                <h2 class="text-center">Customer Photos</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="Images/cp1.jpg" class="img-fluid customer-photo" alt="Customer Photo 1">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp2.jpg" class="img-fluid customer-photo" alt="Customer Photo 2">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp3.jpg" class="img-fluid customer-photo" alt="Customer Photo 3">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp4.jpg" class="img-fluid customer-photo" alt="Customer Photo 4" style="margin-left: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp5.jpg" class="img-fluid customer-photo" alt="Customer Photo 5" style="margin-left: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp6.jpg" class="img-fluid customer-photo" alt="Customer Photo 6" style="margin-left: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp7.jpg" class="img-fluid customer-photo" alt="Customer Photo 6" style="margin-left: 56px;">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp8.jpg" class="img-fluid customer-photo" alt="Customer Photo 6" style="margin-left: 56px;">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <img src="images/cp9.jpg" class="img-fluid customer-photo" alt="Customer Photo 6" style="margin-left: 56px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5">
+        <div class="container">
+            <div class="py-4">
+                <h2 class="text-center">Customer Reviews</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp1.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Lana</h5>
+                            <p class="card-text">""</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp2.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Preeti</h5>
+                            <p class="card-text">""</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp3.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Sunidhi</h5>
+                            <p class="card-text">"."</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp4.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Krisha</h5>
+                            <p class="card-text">""</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp5.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Navisha</h5>
+                            <p class="card-text">"."</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <img src="Images/cp6.jpg" class="card-img-top customer-photo" alt="Customer Photo">
+                        <div class="card-body">
+                            <h5 class="card-title">Hridal</h5>
+                            <p class="card-text">""</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Add more sections or content as needed -->
+
+    <footer class="footer mt-5">
+        <p>&copy; 2024 The Henna Oasis. All rights reserved.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
